@@ -1,3 +1,5 @@
+import { Outlet, Link } from "react-router-dom"
+
 const Layout = () => {
     return (
         <>
@@ -5,14 +7,18 @@ const Layout = () => {
                 <div className="container-fluid">
                     <h5 className="navbar-brand" >Task</h5>
                     <div className="navbar-nav d-flex flex-row ">
-                        <a className="nav-link active me-3">
+                        <Link className="nav-link active me-3" to="/user/add">
                             Add User
-                        </a>
-                        <a className="nav-link">User List</a>
+                        </Link>
+                        <Link className="nav-link" to="/user/list">User List</Link>
                     </div>
                 </div>
 
             </nav>
+
+            <div >
+                <Outlet />
+            </div>
         </>
     )
 }
